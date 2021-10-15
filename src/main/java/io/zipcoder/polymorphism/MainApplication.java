@@ -2,6 +2,8 @@ package io.zipcoder.polymorphism;
 
 import java.util.ArrayList;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class MainApplication {
@@ -60,6 +62,21 @@ public class MainApplication {
             System.out.print(pet.name + " says: ");
             pet.speak();
         }//end of loop
+
+
+        //sort by Pet name, using the implemented Comparable method in Pet
+        Collections.sort(pets);
+        System.out.println("Sorted by Pet Name: " + pets);
+
+
+        //implementing a new Comparator
+        Collections.sort(pets, new Comparator<Pet>() {
+            @Override
+            public int compare(Pet o1, Pet o2) {
+                return o1.getClass().getSimpleName().compareTo(o2.getClass().getSimpleName());
+            }
+        });
+        System.out.println("Sorted by Pet Type: " + pets);
     }
 }
 

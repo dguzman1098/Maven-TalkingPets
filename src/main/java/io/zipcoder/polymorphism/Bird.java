@@ -1,6 +1,6 @@
 package io.zipcoder.polymorphism;
 
-public class Bird extends Pet{
+public class Bird extends Pet implements Comparable<Pet> {
 
     public Bird(String name) {
         super(name);
@@ -17,4 +17,5 @@ public class Bird extends Pet{
 
         System.out.println("Chirp!");
     }
+
 }
